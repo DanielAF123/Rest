@@ -11,7 +11,7 @@
 ?>
 <a href="Layout.php?pagina=editar"><button>Editar perfil</button></a>
 <a href="../index.php?pagina=cerrar"><button>Salir</button></a><br>
-<a href="../index.php?pagina=Rest"><button>Salir</button></a><br>
+<a href="Layout.php?pagina=rest"><button>Rest</button></a><br>
 <?php
 //Muestra los datos del usuario que ha iniciado sesion
     echo "Descripción usuario ".$_SESSION['datos'][0]."<br>";

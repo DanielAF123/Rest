@@ -25,6 +25,9 @@ session_start();
             if($_REQUEST["pagina"]=="borrarC"){
                 include_once './vBorrarCuenta.php';
             }
+            if($_REQUEST["pagina"]=="rest"){
+                include_once './vWSRest.php';
+            }
             }
         }else{
             //Si no existe el usuario en la sesion comprueba a que pagina tiene que incluir dependidendo de que variables reciba 
