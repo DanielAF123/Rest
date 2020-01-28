@@ -1,0 +1,118 @@
+\hypertarget{class_usuario_p_d_o}{}\doxysection{Usuario\+P\+DO Class Reference}
+\label{class_usuario_p_d_o}\index{UsuarioPDO@{UsuarioPDO}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}{validar\+Usuario}} (\$cod\+Usuario, \$password)
+\item 
+\mbox{\hyperlink{class_usuario_p_d_o_ab3afba04e5b719161888cb9236110bc8}{registrar\+Ultima\+Conexion}} (\$usuario, \$contador)
+\item 
+\mbox{\hyperlink{class_usuario_p_d_o_a3cd2de788127ff6e0bb23ac5ef94e357}{alta\+Usuario}} (\$cod\+Usuario, \$desc, \$password)
+\item 
+\mbox{\hyperlink{class_usuario_p_d_o_aed650c61f24fafd665702489b865155d}{modificar\+Contraseña}} (\$cod\+Usuario, \$password)
+\item 
+\mbox{\hyperlink{class_usuario_p_d_o_a79406bef7e8dc705b8155e0e2666cc9d}{modificar\+Desc}} (\$cod\+Usuario, \$desc)
+\item 
+\mbox{\hyperlink{class_usuario_p_d_o_a20400cd01bdb209ce959fe4d00736ace}{borrar\+Usuario}} (\$cod\+Usuario)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_usuario_p_d_o_a3cd2de788127ff6e0bb23ac5ef94e357}\label{class_usuario_p_d_o_a3cd2de788127ff6e0bb23ac5ef94e357}} 
+\index{UsuarioPDO@{UsuarioPDO}!altaUsuario@{altaUsuario}}
+\index{altaUsuario@{altaUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{altaUsuario()}{altaUsuario()}}
+{\footnotesize\ttfamily alta\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario,  }\item[{}]{\$desc,  }\item[{}]{\$password }\end{DoxyParamCaption})}
+
+Permite dar de alta a un usuario 
+\begin{DoxyParams}[1]{Parameters}
+type & {\em \$cod\+Usuario} & codigo del usuario \\
+\hline
+type & {\em \$desc} & descripcion del usuario \\
+\hline
+type & {\em \$password} & contraseña del usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El resultado de la ejecucion del query un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_usuario_p_d_o_a20400cd01bdb209ce959fe4d00736ace}\label{class_usuario_p_d_o_a20400cd01bdb209ce959fe4d00736ace}} 
+\index{UsuarioPDO@{UsuarioPDO}!borrarUsuario@{borrarUsuario}}
+\index{borrarUsuario@{borrarUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{borrarUsuario()}{borrarUsuario()}}
+{\footnotesize\ttfamily borrar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario }\end{DoxyParamCaption})}
+
+Permite eliminar a un usuario de la base de datos 
+\begin{DoxyParams}[1]{Parameters}
+type & {\em \$cod\+Usuario} & codigo del usuario a eliminar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+resultado de la ejecucion del query un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_usuario_p_d_o_aed650c61f24fafd665702489b865155d}\label{class_usuario_p_d_o_aed650c61f24fafd665702489b865155d}} 
+\index{UsuarioPDO@{UsuarioPDO}!modificarContraseña@{modificarContraseña}}
+\index{modificarContraseña@{modificarContraseña}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{modificarContraseña()}{modificarContraseña()}}
+{\footnotesize\ttfamily modificar\+Contraseña (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario,  }\item[{}]{\$password }\end{DoxyParamCaption})}
+
+Permite modificar la contraseña del usuario 
+\begin{DoxyParams}[1]{Parameters}
+type & {\em \$cod\+Usuario} & codigo de usuario a modificar \\
+\hline
+type & {\em \$password} & contraseña del usuario a modificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el resultado de la ejecucion del query un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_usuario_p_d_o_a79406bef7e8dc705b8155e0e2666cc9d}\label{class_usuario_p_d_o_a79406bef7e8dc705b8155e0e2666cc9d}} 
+\index{UsuarioPDO@{UsuarioPDO}!modificarDesc@{modificarDesc}}
+\index{modificarDesc@{modificarDesc}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{modificarDesc()}{modificarDesc()}}
+{\footnotesize\ttfamily modificar\+Desc (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario,  }\item[{}]{\$desc }\end{DoxyParamCaption})}
+
+Permite modificar la descripcion del usuario 
+\begin{DoxyParams}[1]{Parameters}
+type & {\em \$cod\+Usuario} & codigo del usuario a modificar \\
+\hline
+type & {\em \$desc} & descripcion del usuario a modificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el resultado de la ejecucion del query un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_usuario_p_d_o_ab3afba04e5b719161888cb9236110bc8}\label{class_usuario_p_d_o_ab3afba04e5b719161888cb9236110bc8}} 
+\index{UsuarioPDO@{UsuarioPDO}!registrarUltimaConexion@{registrarUltimaConexion}}
+\index{registrarUltimaConexion@{registrarUltimaConexion}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{registrarUltimaConexion()}{registrarUltimaConexion()}}
+{\footnotesize\ttfamily registrar\+Ultima\+Conexion (\begin{DoxyParamCaption}\item[{}]{\$usuario,  }\item[{}]{\$contador }\end{DoxyParamCaption})}
+
+Permite registrar la ultima conexion del usuario y aumentar su contador en la base de datos 
+\begin{DoxyParams}[1]{Parameters}
+type & {\em \$usuario} & un codigo de usuario \\
+\hline
+type & {\em \$contador} & el contador del usuario a modificar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}\label{class_usuario_p_d_o_a415f396e149593193eaf4e319361a2f7}} 
+\index{UsuarioPDO@{UsuarioPDO}!validarUsuario@{validarUsuario}}
+\index{validarUsuario@{validarUsuario}!UsuarioPDO@{UsuarioPDO}}
+\doxysubsubsection{\texorpdfstring{validarUsuario()}{validarUsuario()}}
+{\footnotesize\ttfamily validar\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$cod\+Usuario,  }\item[{}]{\$password }\end{DoxyParamCaption})}
+
+Valida si un usuario existe en la base de datos 
+\begin{DoxyParams}[1]{Parameters}
+type & {\em \$cod\+Usuario} & codigo de un usuario \\
+\hline
+type & {\em \$password} & contraseña de un usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean$\vert$\textbackslash{}\+Usuario boolean false si no tiene exito y un usuario si es correcta la ejecucion 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{_usuario_p_d_o_8php}{Usuario\+P\+D\+O.\+php}}\end{DoxyCompactItemize}

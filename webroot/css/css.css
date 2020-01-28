@@ -1,0 +1,90 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-ene-2020, 16:15:25
+    Author     : Daniel
+*/
+*{
+    margin: 0;padding: 0;
+}
+footer{
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer a{
+    text-decoration: none;
+    font-size: 2em;
+    background-color: #000;
+    margin-left: 2%;
+    color: #fff;
+}
+footer a:hover{
+    color: #f0f;
+}
+.formulario{
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top:  25%;
+    left: 25%;
+    flex-direction: column;
+   background: rgb(20,20,20);
+background: linear-gradient(90deg, rgba(20,20,20,0.958420868347339) 14%, rgba(20,20,20,0.9332107843137255) 100%);
+border-radius: 5%;
+}
+.formulario form div{
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    top:25%;
+    left:25%;
+    font-size: 2em;
+    color: #E50914;
+}
+.formulario form div .margen{
+    margin: 5px;
+}
+.formulario form div .boton{
+    width: 150px;
+}
+.formulario form div input{
+    width: 50%;
+    font-size: 20px;
+}
+.formulario>div{
+    position: relative;
+    top: 25%;
+    left: 25%;
+}
+.boton{
+    font-size: 20px;
+        border-radius: 10%;
+    background-color: #b82c43;
+    font-weight: bold;
+    padding: 10px;
+    border: 3px solid #b82c43;
+}
+.boton:hover{
+    background-color: #e02bb3;
+    border: 3px solid #e02bb3;
+}
+.listaR a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+body{
+    background-color: grey;
+}
