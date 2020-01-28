@@ -24,6 +24,9 @@ if($_REQUEST["pagina"]=='inicio'){
 if($_REQUEST["pagina"]=='borrarC'){
     include_once './controller/cBorrarCuenta.php';
 }
+if($_REQUEST["pagina"]=='Rest'){
+    include_once './controller/cWSRest.php';
+}
 if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     include_once './controller/cMiCuenta.php';
 }
