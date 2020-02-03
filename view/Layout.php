@@ -28,6 +28,9 @@ session_start();
             if($_REQUEST["pagina"]=="rest"){
                 include_once './vWSRest.php';
             }
+            if($_REQUEST["pagina"]=="departamentos"){
+                include_once './vMtoDepartamentos.php';
+            }
             }
         }else{
             //Si no existe el usuario en la sesion comprueba a que pagina tiene que incluir dependidendo de que variables reciba 
