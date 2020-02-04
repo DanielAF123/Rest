@@ -58,17 +58,17 @@ function setFechaBajaDepartamento($fechaBajaDepartamento) {
     }
     public function bajaFisicaDepartamento(){
         $parametros=[$this->codDepartamento];
-        $resultado=DepartamentoPDO::bajaLogicaDepartamento($parametros);
-    return $resultado;    
+        DepartamentoPDO::bajaFisicaDepartamento($parametros);
+     
     }
     public function modificaDepartamento(){
         $parametros=[$this->descDepartamento, $this->codDepartamento];
-        $resultado=DepartamentoPDO::bajaLogicaDepartamento($parametros);
+        $resultado=DepartamentoPDO::modificarDepartamento($parametros);
     return $resultado;    
     }
     public function rehabilitaDepartamento(){
         $parametros=[null,$this->codDepartamento];
-        $resultado=DepartamentoPDO::bajaLogicaDepartamento($parametros);
+        $resultado=DepartamentoPDO::rehabilitaDepartamento($parametros);
     return $resultado;    
     }
     public static function objetoDepartamento($resultado){

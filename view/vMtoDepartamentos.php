@@ -21,11 +21,11 @@
         <td><?php echo $value->getFechaBajaDepartamento(); ?></td>
         <td><?php echo $value->getVolumenDeNegocio(); ?></td>
         <td> 
-          <input type="button" value="Rehabilitacion"  onclick="location='RehabilitacionDepartamento.php?codigo=<?php echo $resultados->CodDepartamento;?>'">
-                <input type="button" value="Baja"  onclick="location='BajaLogicaDepartamento.php?codigo=<?php echo $resultados->CodDepartamento;?>'">
-                <input type="button" value="Visualizar"  onclick="location='MostrarDepartamento.php?codigo=<?php echo $resultados->CodDepartamento;?>'">
-                <input type="button" value="Modificar"  onclick="location='ModificarDepartamento.php?codigo=<?php echo $resultados->CodDepartamento;?>'">
-                <input type="button" value="Eliminar" onclick="location='BorrarDepartamento.php?codigo=<?php echo $resultados->CodDepartamento;?>'">
+          <input type="button" value="Rehabilitacion"  onclick="location='../index.php?pagina=rehabilitacion&codigo=<?php echo $value->getCodDepartamento();?>'">
+                <input type="button" value="Baja"  onclick="location='../index.php?pagina=baja&codigo=<?php echo $value->getCodDepartamento();?>'">
+                <input type="button" value="Visualizar"  onclick="location='./Layout.php?pagina=visualizar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>'">
+                <input type="button" value="Modificar"  onclick="location='./Layout.php?pagina=modificar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>&modificarDepartamento=modifica'">
+                <input type="button" value="Eliminar" onclick="location='./Layout.php?pagina=borrarDepartamento&codigo=<?php echo $value->getCodDepartamento();?>'">
         </td>
     </tr>
             <?php }

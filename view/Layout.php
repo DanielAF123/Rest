@@ -36,6 +36,15 @@ session_start();
             if($_REQUEST["pagina"]=="altaDepartamento"){
                 include_once './vAltaDepartamento.php';
             }
+            if($_REQUEST["pagina"]=="borrarDepartamento"){
+                include_once './vEliminarDepartamento.php';
+            }
+            if($_REQUEST["pagina"]=="modificar"){
+                include_once './vConsultaModificarDepartamento.php';
+            }
+            if($_REQUEST["pagina"]=="visualizar"){
+                include_once './vConsultaModificarDepartamento.php';
+            }
             }
         }else{
             //Si no existe el usuario en la sesion comprueba a que pagina tiene que incluir dependidendo de que variables reciba 

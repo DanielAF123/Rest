@@ -35,6 +35,15 @@ if($_REQUEST["pagina"]=='departamentos'){
 if($_REQUEST["pagina"]=='altaDepartamento'){
     include_once './controller/cAltaDepartamento.php';
 }
+if($_REQUEST["pagina"]=='borrarDepartamento'){
+    include_once './controller/cEliminarDepartamento.php';
+}
+if($_REQUEST["pagina"]=='rehabilitacion'){
+    include_once './controller/cRehabilitacion.php';
+}
+if($_REQUEST["pagina"]=='baja'){
+    include_once './controller/cBaja.php';
+}
 if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     include_once './controller/cMiCuenta.php';
 }
