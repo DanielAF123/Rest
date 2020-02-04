@@ -12,6 +12,8 @@ include_once './config/ConfAplicación.php';
 include_once './model/UsuarioPDO.php';
 include_once './config/ConfDB.php';
 include_once './core/validacionFormularios.php';
+include_once './model/Departamento.php';
+include_once './model/DepartamentoPDO.php';
 //Comprueba que existe el usuario, la pagina y a que tiene que incluir
 if(isset($_SESSION[USUARIOA])){
     if(isset($_REQUEST["pagina"])){
@@ -29,6 +31,9 @@ if($_REQUEST["pagina"]=='rest'){
 }
 if($_REQUEST["pagina"]=='departamentos'){
     include_once './controller/cMtoDepartamentos.php';
+}
+if($_REQUEST["pagina"]=='altaDepartamento'){
+    include_once './controller/cAltaDepartamento.php';
 }
 if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     include_once './controller/cMiCuenta.php';

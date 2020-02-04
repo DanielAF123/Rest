@@ -9,12 +9,14 @@ Class Departamento{
     private $codDepartamento;
     private $descDepartamento;
     private $volumenDeNegocio;
+    private $fechaCreacionDepartamento;
     private $fechaBajaDepartamento;
     
-    public function __construct($codDepartamento, $descDepartamento, $volumenDeNegocio, $fechaBajaDepartamento){
+    public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio){
         $this->codDepartamento=$codDepartamento;
         $this->descDepartamento=$descDepartamento;
         $this->volumenDeNegocio=$volumenDeNegocio;
+        $this->fechaCreacionDepartamento=$fechaCreacionDepartamento;
         $this->fechaBajaDepartamento=null;
 }
 function getCodDepartamento() {
@@ -70,8 +72,13 @@ function setFechaBajaDepartamento($fechaBajaDepartamento) {
     return $resultado;    
     }
     public static function objetoDepartamento($resultado){
-        $objeto=$resultado->fetchObject();
-        $departamento=new Departamento($objeto->codDepartamento, $objeto->descDepartamento, $objeto->volumenDeNegocio);
-        return $departamento;
+        $arrayDepartamentos=[];
+        $contador=0;
+        while($objeto=$resultado->fetchObject()){
+            $contador++;
+        $departamento=new Departamento($objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio);
+        $arrayDepartamentos[]=$departamento;
+        }
+        return $arrayDepartamentos;
     }
 }

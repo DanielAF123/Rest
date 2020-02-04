@@ -1,4 +1,5 @@
 <?php
+include_once '../model/Departamento.php';
 session_start();
 ?>
 <!doctype html>
@@ -12,6 +13,7 @@ session_start();
         <?php
         include_once '../config/ConfAplicación.php';
         include_once '../model/Usuario.php';
+        
         //Comprueba que existe una sesion abierta de un usuario
         if(isset($_SESSION[USUARIOA])){
             //Comprueba que existe una pagina a la que incluir y a que pagina incluir
@@ -30,6 +32,9 @@ session_start();
             }
             if($_REQUEST["pagina"]=="departamentos"){
                 include_once './vMtoDepartamentos.php';
+            }
+            if($_REQUEST["pagina"]=="altaDepartamento"){
+                include_once './vAltaDepartamento.php';
             }
             }
         }else{
