@@ -9,6 +9,7 @@ if(isset($_REQUEST["buscar"])){
     <input type="submit" value="Buscar por descripcion" name="BuscarD">
     <input type="submit" value="Buscar por codigo" name="BuscarC">
 </form>
+<p id="departamentos"></p>
 <button onclick="location='Layout.php?pagina=altaDepartamento'">Alta departamento</button>
 <table> 
     <tr> 
