@@ -1,4 +1,4 @@
-var miXHR
+var miXHR;
 function cargar(){
     miXHR=new XMLHttpRequest();
     $(function(){
@@ -20,11 +20,19 @@ function cambio(){
 }
 }
 function cambioDepartamento(){
+    
     if(this.readyState == 4 && this.status == 200){
         var p=document.getElementById("departamentos");
         var json=this.responseText;
-        console.log(json);
-        p.innerHTML=json;
+        p.innerHTML="";
+        json=JSON.parse(json);
+            console.log(json.length);
+            json.forEach(function(item,value){
+                p.innerHTML+=json[value].codigo+" ";    
+            });
+        
+            
     }
+    
 }
 window.addEventListener('load',cargar,false);

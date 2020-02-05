@@ -11,7 +11,7 @@ if(!isset($_SESSION[USUARIOA])){
 if(isset($_REQUEST["ajax"])){
     $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["busqueda"]);
     while($objeto=$resultado->fetchObject()){
-        $departamento=[$objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio,$objeto->T02_FechaBajaDepartamento];
+        $departamento=["codigo"=>$objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio,$objeto->T02_FechaBajaDepartamento];
         $arrayDepartamentos[]=$departamento;
         }
     echo json_encode($arrayDepartamentos);
