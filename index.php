@@ -14,6 +14,7 @@ include_once './config/ConfDB.php';
 include_once './core/validacionFormularios.php';
 include_once './model/Departamento.php';
 include_once './model/DepartamentoPDO.php';
+include_once './model/Rest.php';
 //Comprueba que existe el usuario, la pagina y a que tiene que incluir
 if(isset($_SESSION[USUARIOA])){
     if(isset($_REQUEST["pagina"])){

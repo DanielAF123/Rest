@@ -9,14 +9,7 @@ if(isset($_REQUEST["ids"])){
     $entrada=false;
 }
 if($entrada){
-    $ch= curl_init();
-    curl_setopt($ch,CURLOPT_URL,"https://data.europa.eu/euodp/data/apiodp/action/package_list");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, TRUE);
-    $array=["limit"=>20,"offset"=>3];
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $array);
-    $resultado=curl_exec($ch);
-    curl_close($ch);
+    $resultado=Rest::consultarId();
     $_SESSION["resultadoAPI"]=json_decode($resultado,true);
     header("Location: view/Layout.php?pagina=rest");
     
@@ -29,11 +22,7 @@ if(isset($_REQUEST["buscar"])){
     $entrada=false;
 }
 if($entrada){
-    $ch= curl_init();
-    curl_setopt($ch,CURLOPT_URL,"https://data.europa.eu/euodp/data/dataset/".$_REQUEST["codigo"]);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    
-    $resultado=curl_exec($ch);
-    curl_close($ch);
+    $resultado=Rest::consultarDatos($_REQUEST["codigo"]);
     $_SESSION["resultadoAPI"]=$resultado;
     header("Location: view/Layout.php?pagina=rest");
     
