@@ -1,7 +1,7 @@
 <form action="../index.php?pagina=modificarDepartamento" method="POST">
     <label for="codigo">Codigo</label>
-    <input type="text" name="codigo" id="codigo" disabled value="<?php echo $_REQUEST["codigo"];?>">
-    <input type="hidden" name="codigo" id="codigo" disabled value="<?php echo $_REQUEST["codigo"];?>">
+    <input type="text" name="codigo1" id="codigo1" disabled value="<?php echo $_REQUEST["codigo"];?>">
+    <input type="hidden" name="codigo" id="codigo" value="<?php echo $_REQUEST["codigo"];?>">
     <label for="desc">descripcion departamento</label>
     <input type="text" name="desc" id="desc" value="<?php echo $_REQUEST["desc"];?>">
     <label for="volumen">Volumen departamento</label>

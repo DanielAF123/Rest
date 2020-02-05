@@ -1,3 +1,9 @@
+<?php
+if(isset($_REQUEST["buscar"])){
+    echo "buscar";
+    header("Location: ../index.php?pagina=departamentos&buscar=departamentos");
+}
+?>
 <form action="../index.php?pagina=departamentos" method="POST">
     <input type="text" name="busqueda" id="busqueda">
     <input type="submit" value="Buscar por descripcion" name="BuscarD">
@@ -31,3 +37,4 @@
             <?php }
             ?>
 </table>
+<button onclick="location='./Layout.php?pagina=inicio'">Atras</button>

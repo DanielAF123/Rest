@@ -12,12 +12,12 @@ Class Departamento{
     private $fechaCreacionDepartamento;
     private $fechaBajaDepartamento;
     
-    public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio){
+    public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio,$fechaBajaDepartamento){
         $this->codDepartamento=$codDepartamento;
         $this->descDepartamento=$descDepartamento;
         $this->volumenDeNegocio=$volumenDeNegocio;
         $this->fechaCreacionDepartamento=$fechaCreacionDepartamento;
-        $this->fechaBajaDepartamento=null;
+        $this->fechaBajaDepartamento=$fechaBajaDepartamento;
 }
 function getCodDepartamento() {
     return $this->codDepartamento;
@@ -61,8 +61,8 @@ function setFechaBajaDepartamento($fechaBajaDepartamento) {
         DepartamentoPDO::bajaFisicaDepartamento($parametros);
      
     }
-    public function modificaDepartamento(){
-        $parametros=[$this->descDepartamento, $this->codDepartamento];
+    public function modificaDepartamento($desc){
+        $parametros=[$desc, $this->codDepartamento];
         $resultado=DepartamentoPDO::modificarDepartamento($parametros);
     return $resultado;    
     }
@@ -76,7 +76,7 @@ function setFechaBajaDepartamento($fechaBajaDepartamento) {
         $contador=0;
         while($objeto=$resultado->fetchObject()){
             $contador++;
-        $departamento=new Departamento($objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio);
+        $departamento=new Departamento($objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio,$objeto->T02_FechaBajaDepartamento);
         $arrayDepartamentos[]=$departamento;
         }
         return $arrayDepartamentos;

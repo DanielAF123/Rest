@@ -8,7 +8,7 @@
 if(!isset($_SESSION[USUARIOA])){
     header('Location: ./view/Layout.php');
 }
-if(isset($_REQUEST["BuscarC"])){
+if(isset($_REQUEST["BuscarC"]) || isset($_REQUEST["buscar"])){
     $_SESSION["busqueda"]=$_REQUEST["busqueda"];
     $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["busqueda"]);
     $arrayDepartamentos= Departamento::objetoDepartamento($resultado);

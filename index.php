@@ -44,10 +44,17 @@ if($_REQUEST["pagina"]=='rehabilitacion'){
 if($_REQUEST["pagina"]=='baja'){
     include_once './controller/cBaja.php';
 }
+if($_REQUEST["pagina"]=='modificarDepartamento'){
+    include_once './controller/cConsultaModificarDepartamento.php';
+}
 if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     include_once './controller/cMiCuenta.php';
 }
     }
+    if(!isset($_REQUEST["pagina"])){
+    session_destroy();
+    header("Location: ./index.php");
+}
 }else{
     //Si no existe el usuarion comprueba que pagina tiene que incluir y si existe la pagina
     if(isset($_REQUEST["pagina"]) && $_REQUEST["pagina"]=="registro"){
