@@ -16,6 +16,14 @@ if(isset($_REQUEST["ajax"])){
         }
     echo json_encode($arrayDepartamentos);
 }
+if(isset($_REQUEST["ajaxP"])){
+    $resultado= ProvinciaPDO::buscarProvincias($_REQUEST["busqueda"]);
+    while($objeto=$resultado->fetchObject()){
+        $provincia=["nombre"=>$objeto->T03_Provincia];
+        $arrayProvincias[]=$provincia;
+        }
+    echo json_encode($arrayProvincias);
+}
 if(isset($_REQUEST["BuscarC"]) || isset($_REQUEST["buscar"])){
     $_SESSION["busqueda"]=$_REQUEST["busqueda"];
     $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["busqueda"]);
@@ -30,5 +38,5 @@ if(isset($_REQUEST["BuscarD"])){
     header("Location: ./view/Layout.php?pagina=departamentos");
 }
 
-    //header("Location: ./view/Layout.php?pagina=departamentos");
+    header("Location: ./view/Layout.php?pagina=departamentos");
 
