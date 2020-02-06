@@ -4,6 +4,8 @@ function cargar(){
     $(function(){
         $("#busqueda").on("keyup",cambio);
         $("#busqueda").on("keydown",cambio);
+        $("#provincia").on("keyup",provincia);
+        $("#provincia").on("keydown",provincia);
     });
 }
 
@@ -32,6 +34,35 @@ function cambioDepartamento(){
                 p.innerHTML+=json[value].desc+" ";  
             });
         
+            
+    }
+    
+}
+function provincia(){
+    if(miXHR){
+    var valor=$("#busqueda").val();
+    var url="../index.php";
+    miXHR.open("POST",url,true);
+    miXHR.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    miXHR.onreadystatechange=getProvincia;
+    miXHR.send("busqueda="+valor+"&ajax=ajax&pagina=departamentos");
+}else{
+        alert("Error al cargar AJAX");
+}
+}
+function getProvincia(){
+    
+    if(this.readyState == 4 && this.status == 200){
+        var json=this.responseText;
+        p.innerHTML="";
+        json=JSON.parse(json);
+            console.log(json);
+            json.forEach(function(item,value){
+                p.innerHTML+=json[value].desc+" ";  
+            });
+        $(function(){
+            
+        });
             
     }
     
