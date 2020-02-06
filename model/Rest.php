@@ -8,12 +8,12 @@ Class Rest{
     curl_close($ch);
     return $resultado;
     }
-    public static function consultarId(){
+    public static function consultarId($numero){
     $ch= curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://data.europa.eu/euodp/data/apiodp/action/package_list");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, TRUE);
-    $array=["limit"=>30,"offset"=>3];
+    $array=["limit"=>$numero,"offset"=>3];
     curl_setopt($ch, CURLOPT_POSTFIELDS, $array);
     $resultado=curl_exec($ch);
     curl_close($ch);

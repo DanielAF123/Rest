@@ -9,7 +9,7 @@ if(isset($_REQUEST["ids"])){
     $entrada=false;
 }
 if($entrada){
-    $resultado=Rest::consultarId();
+    $resultado=Rest::consultarId($_REQUEST["numero"]);
     $_SESSION["resultadoAPI"]=json_decode($resultado,true);
     header("Location: view/Layout.php?pagina=rest");
     

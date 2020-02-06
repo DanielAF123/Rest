@@ -62,7 +62,7 @@ session_start();
         <footer> 
             <a href="../doc/documentacion/html/index.html" target="_blank">Documentación</a>
             <a href="../doc/Tema2.pdf" target="_black">Herramientas utilizadas</a>
-            <a href="../../../../../">Daniel Alcala Fernandez</a><a target="_blank" href="https://github.com/DanielAF123/LoginLogoutMulticapaPOO">GitLab</a>
+            <a href="../../../../../">Daniel Alcala Fernandez</a><a target="_blank" href="https://github.com/DanielAF123/Rest">GitLab</a>
         </footer>
     </body>
 </html>
