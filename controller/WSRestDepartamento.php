@@ -10,8 +10,11 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         $departamentoO=["codigo"=>$objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio,$objeto->T02_FechaBajaDepartamento];
         $departamento[$objeto->T02_CodDepartamento]=$departamentoO;
         }
-        header("HTTP/1.1 200 OK");
+        if(isset($departamento)){
         echo json_encode($departamento);
+        }else{
+            echo json_encode(["ERROR"=>"Ningun departamento encontrado con esa busqueda"]);
+        }
     }
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -22,7 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $departamento[$objeto->T02_CodDepartamento]=$departamentoO;
         }
         header("HTTP/1.1 200 OK");
+        if(isset($departamento)){
         echo json_encode($departamento);
+        }else{
+            echo json_encode(["ERROR"=>"Ningun departamento encontrado con esa busqueda"]);
+        }
     
     }
 }
