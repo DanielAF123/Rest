@@ -9,9 +9,9 @@ if(!isset($_SESSION[USUARIOA])){
     header('Location: ./view/Layout.php');
 }
 if(isset($_REQUEST["ajax"])){
-    $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["busqueda"]);
+    $resultado=DepartamentoPDO::buscaDepartamentoPorDescripcionAjax($_REQUEST["busqueda"]);
     while($objeto=$resultado->fetchObject()){
-        $departamento=["codigo"=>$objeto->T02_CodDepartamento, $objeto->T02_DescDepartamento, $objeto->T02_FechaCreacionDepartamento,$objeto->T02_VolumenNegocio,$objeto->T02_FechaBajaDepartamento];
+        $departamento=["desc"=>$objeto->T02_DescDepartamento];
         $arrayDepartamentos[]=$departamento;
         }
     echo json_encode($arrayDepartamentos);

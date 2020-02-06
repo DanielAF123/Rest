@@ -2,7 +2,8 @@ var miXHR;
 function cargar(){
     miXHR=new XMLHttpRequest();
     $(function(){
-        $("#busqueda").change(cambio);
+        $("#busqueda").on("keyup",cambio);
+        $("#busqueda").on("keydown",cambio);
     });
 }
 
@@ -26,9 +27,9 @@ function cambioDepartamento(){
         var json=this.responseText;
         p.innerHTML="";
         json=JSON.parse(json);
-            console.log(json.length);
+            console.log(json);
             json.forEach(function(item,value){
-                p.innerHTML+=json[value].codigo+" ";    
+                p.innerHTML+=json[value].desc+" ";  
             });
         
             

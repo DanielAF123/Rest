@@ -18,6 +18,12 @@ Class DepartamentoPDO{
     $resultado=DBPDO::ejecutaConsulta($sql, $parametros);
     return $resultado;
 }
+    public static function buscaDepartamentoPorDescripcionAjax($desc){
+    $sql="Select T02_DescDepartamento From T02_Departamento WHERE T02_DescDepartamento LIKE ?";
+    $parametros=["%".$desc."%"];
+    $resultado=DBPDO::ejecutaConsulta($sql, $parametros);
+    return $resultado;
+}
     public static function altaDepartamento($codigo,$desc,$volumen){
         $fecha=new DateTime();
     $sql="INSERT INTO T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento ,T02_VolumenNegocio) values(?,?,?,?)";

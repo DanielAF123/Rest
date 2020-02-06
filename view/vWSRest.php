@@ -27,6 +27,7 @@
     ?>
 </form>
     <a href="../index.php?pagina=inicio"><button>Atras</button></a>
+    <p>Direccion API PROPIA http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/controller/WSRestDepartamento.php</p>
     <h3>WS REST Propio</h3>
     <form action="../index.php?pagina=rest" method="POST">
         <label for="codigo">codigo del departamento GET</label>
