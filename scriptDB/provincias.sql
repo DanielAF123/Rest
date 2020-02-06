@@ -27,11 +27,6 @@ SET time_zone = "+00:00";
 --
 USE DAW202LoginLogoutPOO;
 
-CREATE TABLE `T03_Provincias` (
-  `T03_Id` int(11) NOT NULL,
-  `T03_Id_Provincia` smallint(6) DEFAULT NULL,
-  `T03_Provincia` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `provincias`
@@ -98,8 +93,6 @@ INSERT INTO `T03_Provincias` (`T03_Id`, `T03_Id_Provincia`, `T03_Provincia`) VAL
 --
 -- Indices de la tabla `provincias`
 --
-ALTER TABLE `T03_Provincias`
-  ADD PRIMARY KEY (`T03_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -108,8 +101,7 @@ ALTER TABLE `T03_Provincias`
 --
 -- AUTO_INCREMENT de la tabla `provincias`
 --
-ALTER TABLE `T03_Provincias`
-  MODIFY `T03_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

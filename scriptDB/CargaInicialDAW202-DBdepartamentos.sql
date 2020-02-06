@@ -7,12 +7,12 @@
 USE DAW202LoginLogoutPOO;
 
 -- Introduccion de datos dentro de la tabla creada
-INSERT INTO T02_Departamento(T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento, T02_VolumenNegocio) VALUES
-    ('INF', 'Departamento de informatica',1574772123, 50),
-    ('VEN', 'Departamento de ventas',1574772123, 800000),
-    ('CON', 'Departamento de contabilidad',1574772123, 900000),
-    ('MAT', 'Departamento de matematicas',1574772123, 80000000),
-    ('CAT', 'Departamento de gatos',1574772123, 12584631268);
+INSERT INTO T02_Departamento(T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento, T02_VolumenNegocio,T02_Id) VALUES
+    ('INF', 'Departamento de informatica',1574772123, 50,1),
+    ('VEN', 'Departamento de ventas',1574772123, 800000,12),
+    ('CON', 'Departamento de contabilidad',1574772123, 900000,14),
+    ('MAT', 'Departamento de matematicas',1574772123, 80000000,10),
+    ('CAT', 'Departamento de gatos',1574772123, 12584631268,45);
 -- 1574772123 -> 26-nov-2019 ~13:45 --
 
 -- El tipo de usuario es "usuario" como predeterminado, despues añado un admin --

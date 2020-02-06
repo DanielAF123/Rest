@@ -11,12 +11,22 @@
     USE DAW202LoginLogoutPOO;
 
 -- Crear tablas. --
+CREATE TABLE `T03_Provincias` (
+  `T03_Id` int(11) NOT NULL,
+  `T03_Id_Provincia` smallint(6) DEFAULT NULL,
+  `T03_Provincia` varchar(30) DEFAULT NULL,
+PRIMARY KEY (T03_Id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `T03_Provincias`
+  MODIFY `T03_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
     CREATE TABLE IF NOT EXISTS T02_Departamento(
         T02_CodDepartamento varchar(3) PRIMARY KEY,
         T02_DescDepartamento varchar(255) NOT null,
         T02_FechaBajaDepartamento int DEFAULT null, -- Valor por defecto null, ya que cuando lo creas no puede estar de baja logica
         T02_FechaCreacionDepartamento int NOT null,
-        T02_VolumenNegocio float NOT null
+        T02_VolumenNegocio float NOT null,
+        T02_Id int(11) NOT null,
+         FOREIGN KEY (T02_Id) REFERENCES T03_Provincias(T03_Id)
     );
 
     CREATE TABLE IF NOT EXISTS T01_Usuario(

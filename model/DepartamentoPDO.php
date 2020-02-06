@@ -26,8 +26,8 @@ Class DepartamentoPDO{
 }
     public static function altaDepartamento($codigo,$desc,$volumen){
         $fecha=new DateTime();
-    $sql="INSERT INTO T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento ,T02_VolumenNegocio) values(?,?,?,?)";
-    $parametros=[$codigo,$desc,$fecha->getTimestamp(),$volumen];
+    $sql="INSERT INTO T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento ,T02_VolumenNegocio,T02_Id) values(?,?,?,?,?)";
+    $parametros=[$codigo,$desc,$fecha->getTimestamp(),$volumen,1];
     $resultado=DBPDO::ejecutaConsulta($sql, $parametros);
     return $resultado;
 }
