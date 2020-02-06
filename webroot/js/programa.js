@@ -56,6 +56,9 @@ function getProvincia(){
         var json=this.responseText;
         json=JSON.parse(json);
             console.log(json);
+            json.forEach(function(item,value){
+                $("#provincias").append("<option value="+json[value].nombre+">"+json[value].nombre+"</option>");  
+            });
     }
     
 }

@@ -17,7 +17,13 @@ if(isset($_REQUEST["ajax"])){
     echo json_encode($arrayDepartamentos);
 }
 if(isset($_REQUEST["ajaxP"])){
-    $resultado= ProvinciaPDO::buscarProvincias($_REQUEST["busqueda"]);
+    $valor= explode("", $_REQUEST["busqueda"]);
+    if(count($valor)==4){
+        $valor=$valor[0];
+    }else{
+        $valor=$valor[0].$valor[1];
+    }
+    $resultado= ProvinciaPDO::buscarProvincias($valor);
     while($objeto=$resultado->fetchObject()){
         $provincia=["nombre"=>$objeto->T03_Provincia];
         $arrayProvincias[]=$provincia;
