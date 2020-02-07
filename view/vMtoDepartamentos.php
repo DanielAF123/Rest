@@ -12,7 +12,7 @@ if(isset($_REQUEST["buscar"])){
 <p id="departamentos"></p>
 <button onclick="location='Layout.php?pagina=altaDepartamento'">Alta departamento</button>
 <label for="provincia">Codigo Postal</label>
-<input type="text" name="provincia" id="provincia">
+<input type="number" name="provincia" id="provincia" max="5">
 <input type="text" disabled name="provincias" id="provincias">
 <table> 
     <tr> 
