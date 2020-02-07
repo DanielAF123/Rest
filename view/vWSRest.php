@@ -22,7 +22,7 @@
     <input type="submit" value="Buscar" name="buscar">
     <?php 
         if(isset($_SESSION["resultadoAPI"]["html"])){
-    echo $_SESSION["resultadoAPI"];
+    echo $_SESSION["resultadoAPI"]["html"];
         }
     ?>
 </form>
