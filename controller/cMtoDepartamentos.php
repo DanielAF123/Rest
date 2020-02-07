@@ -17,12 +17,7 @@ if(isset($_REQUEST["ajax"])){
     echo json_encode($arrayDepartamentos);
 }
 if(isset($_REQUEST["ajaxP"])){
-    $valor= explode("", $_REQUEST["busqueda"]);
-    if(count($valor)==4){
-        $valor=$valor[0];
-    }else{
-        $valor=$valor[0].$valor[1];
-    }
+    $valor=$_REQUEST["busqueda"];
     $resultado= ProvinciaPDO::buscarProvincias($valor);
     while($objeto=$resultado->fetchObject()){
         $provincia=["nombre"=>$objeto->T03_Provincia];
@@ -43,6 +38,4 @@ if(isset($_REQUEST["BuscarD"])){
     $_SESSION["Departamentos"]=$arrayDepartamentos;
     header("Location: ./view/Layout.php?pagina=departamentos");
 }
-
-    header("Location: ./view/Layout.php?pagina=departamentos");
 

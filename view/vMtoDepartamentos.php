@@ -5,7 +5,7 @@ if(isset($_REQUEST["buscar"])){
 }
 ?>
 <form action="../index.php?pagina=departamentos" method="POST">
-    <input type="text" name="busqueda" id="busqueda">
+    <input type="text" name="busqueda" id="busqueda" autocomplete="off">
     <input type="submit" value="Buscar por descripcion" name="BuscarD">
     <input type="submit" value="Buscar por codigo" name="BuscarC">
 </form>
@@ -13,7 +13,7 @@ if(isset($_REQUEST["buscar"])){
 <button onclick="location='Layout.php?pagina=altaDepartamento'">Alta departamento</button>
 <label for="provincia">provincia</label>
 <input type="text" name="provincia" id="provincia">
-<select name="provincias" id="provincias"></select>
+<input type="text" disabled name="provincias" id="provincias">
 <table> 
     <tr> 
         <th>Codigo</th>

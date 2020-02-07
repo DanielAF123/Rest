@@ -4,8 +4,7 @@ function cargar(){
     $(function(){
         $("#busqueda").on("keyup",cambio);
         $("#busqueda").on("keydown",cambio);
-        $("#provincia").on("keyup",provincia);
-        $("#provincia").on("keydown",provincia);
+        $("#provincia").blur(provincia);
     });
 }
 
@@ -45,6 +44,16 @@ function provincia(){
     miXHR.open("POST",url,true);
     miXHR.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     miXHR.onreadystatechange=getProvincia;
+    var numeros=valor.split("");
+        if(numeros.length==4){
+            valor=numeros[0];
+        }else{
+            if(numeros[0]==0){
+                valor=numeros[1];
+            }else{
+            valor=numeros[0]+numeros[1];
+        }
+        }
     miXHR.send("busqueda="+valor+"&ajaxP=ajax&pagina=departamentos");
 }else{
         alert("Error al cargar AJAX");
@@ -55,9 +64,9 @@ function getProvincia(){
     if(this.readyState == 4 && this.status == 200){
         var json=this.responseText;
         json=JSON.parse(json);
-            console.log(json);
+            $("#provincias").empty();
             json.forEach(function(item,value){
-                $("#provincias").append("<option value="+json[value].nombre+">"+json[value].nombre+"</option>");  
+                $("#provincias").attr({value:json[value].nombre}); 
             });
     }
     
