@@ -7,6 +7,6 @@ if(isset($_REQUEST["Eliminar"])){
     $objeto=Departamento::objetoDepartamento($resultado);
     var_dump($objeto);
     $objeto[0]->bajaFisicaDepartamento();
-    header("Location: ./view/Layout.php?pagina=departamentos");
+    header("Location: ./view/Layout.php?pagina=departamentos&busqueda=a");
 }
 

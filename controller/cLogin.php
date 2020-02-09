@@ -9,6 +9,10 @@
 if(isset($_SESSION[USUARIOA])){
     header('Location: ./view/Layout.php?pagina=inicio');
 }
+        if(isset($_SESSION["codUsuario"]) && isset($_SESSION["password"])){
+            $_REQUEST["codUsuario"]=$_SESSION["codUsuario"];
+            $_REQUEST["password"]=$_SESSION["password"];
+        }
 //Comprueba que recibe los datos y los valida si no nos devuelve a la anterior pagina
 if(isset($_REQUEST["codUsuario"]) && isset($_REQUEST["password"])){
     $entrada=true;
@@ -23,6 +27,7 @@ if(isset($_REQUEST["codUsuario"]) && isset($_REQUEST["password"])){
     }
     if(!$entrada){
         //Realiza un quiery comprobando que existe el usuario, actualizando sus datos y añadiendo el usuario a la session
+
     $usuario= UsuarioPDO::validarUsuario($_REQUEST["codUsuario"], $_REQUEST['password']);
     if(is_object($usuario)){
         UsuarioPDO::registrarUltimaConexion($usuario->getCodUsuario(),$usuario->getContadorAccesos());

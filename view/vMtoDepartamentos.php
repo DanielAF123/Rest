@@ -3,6 +3,10 @@ if(isset($_REQUEST["buscar"])){
     echo "buscar";
     header("Location: ../index.php?pagina=departamentos&buscar=departamentos");
 }
+if(isset($_REQUEST["busqueda"])){
+    $_REQUEST["busqueda"]=$_SESSION["busqueda"];
+    header("Location: ../index.php?pagina=departamentos&buscar=departamentos&busqueda=".$_REQUEST["busqueda"]);
+}
 ?>
 <form action="../index.php?pagina=departamentos" method="POST">
     <input type="text" name="busqueda" id="busqueda" autocomplete="off">

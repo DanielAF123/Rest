@@ -31,7 +31,9 @@ if(isset($_SESSION[USUARIOA])){
     $r=UsuarioPDO::altaUsuario($_REQUEST["codUsuario"], $_REQUEST['desc'],$_REQUEST['password']);
     $usuario= UsuarioPDO::validarUsuario($_REQUEST["codUsuario"], $_REQUEST['password']);
     if(is_object($usuario)){
-        header("Location: ./view/Layout.php");
+        $_SESSION["codUsuario"]=$_REQUEST["codUsuario"];
+        $_SESSION["password"]=$_REQUEST["password"];
+        header("Location: ./index.php");
     }else{
         header("Location: ./view/Layout.php?pagina=registro");
     }

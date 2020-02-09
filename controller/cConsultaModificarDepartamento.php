@@ -6,5 +6,5 @@ if(isset($_REQUEST["Modificar"])){
     $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["codigo"]);
     $departamento=Departamento::objetoDepartamento($resultado);
     $departamento[0]->modificaDepartamento($_REQUEST["desc"]);
-    header("Location: ./view/Layout.php?pagina=departamentos");
+    header("Location: ./view/Layout.php?pagina=departamentos&busqueda=a");
 }

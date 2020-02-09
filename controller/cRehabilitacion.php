@@ -5,4 +5,4 @@ if(!isset($_SESSION[USUARIOA])){
 $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["codigo"]);
 $departamento= Departamento::objetoDepartamento($resultado);
 $departamento[0]->rehabilitaDepartamento();
-header("Location: ./view/Layout.php?pagina=departamentos");
+header("Location: ./view/Layout.php?pagina=departamentos&busqueda=a");

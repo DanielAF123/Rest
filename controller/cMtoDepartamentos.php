@@ -25,14 +25,19 @@ if(isset($_REQUEST["ajaxP"])){
         }
     echo json_encode($arrayProvincias);
 }
-if(isset($_REQUEST["BuscarC"]) || isset($_REQUEST["buscar"])){
+if(isset($_REQUEST["BuscarC"]) || isset($_REQUEST["buscar"]) || isset($_SESSION["busqueda"])){
+    if(isset($_REQUEST["busqueda"])){
     $_SESSION["busqueda"]=$_REQUEST["busqueda"];
+    }else{
+        $_REQUEST["busqueda"]=$_SESSION["busqueda"];
+    }
     $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["busqueda"]);
     $arrayDepartamentos= Departamento::objetoDepartamento($resultado);
     $_SESSION["Departamentos"]=$arrayDepartamentos;
     header("Location: ./view/Layout.php?pagina=departamentos");
 }
 if(isset($_REQUEST["BuscarD"])){
+    $_SESSION["busqueda"]=$_REQUEST["busqueda"];
     $resultado=DepartamentoPDO::buscaDepartamentoPorDescripcion($_REQUEST["busqueda"]);
     $arrayDepartamentos= Departamento::objetoDepartamento($resultado);
     $_SESSION["Departamentos"]=$arrayDepartamentos;
