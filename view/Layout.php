@@ -38,6 +38,9 @@ session_start();
             if($_REQUEST["pagina"]=="altaDepartamento"){
                 include_once './vAltaDepartamento.php';
             }
+            if($_REQUEST["pagina"]=="usuario"){
+                include_once './vMtoUsuarios.php';
+            }
             if($_REQUEST["pagina"]=="borrarDepartamento"){
                 include_once './vEliminarDepartamento.php';
             }
