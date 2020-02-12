@@ -43,6 +43,10 @@ if(isset($_REQUEST["busqueda"])){
         </td>
     </tr>
             <?php }
+            if(isset($_SESSION["errores"])){
+            echo $_SESSION["errores"]["errorBusqueda"];
+            unset($_SESSION["errores"]);
+            }
             ?>
 </table>
 <button onclick="location='./Layout.php?pagina=inicio'">Atras</button>

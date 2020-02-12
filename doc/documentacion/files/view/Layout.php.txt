@@ -1,0 +1,70 @@
+<?php
+include_once '../model/Departamento.php';
+session_start();
+?>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="../webroot/css/css.css">
+        <script src="../webroot/js/jquery-3.4.1.min.js"></script>
+        <script src="../webroot/js/programa.js"></script>
+    </head>
+    <body>
+        <?php
+        include_once '../config/ConfAplicación.php';
+        include_once '../model/Usuario.php';
+        
+        //Comprueba que existe una sesion abierta de un usuario
+        if(isset($_SESSION[USUARIOA])){
+            //Comprueba que existe una pagina a la que incluir y a que pagina incluir
+            if(isset($_REQUEST["pagina"])){
+            if($_REQUEST["pagina"]=="inicio"){
+                include_once './vInicio.php';
+            }
+            if($_REQUEST["pagina"]=="editar"){
+                include_once './vMiCuenta.php';
+            }
+            if($_REQUEST["pagina"]=="borrarC"){
+                include_once './vBorrarCuenta.php';
+            }
+            if($_REQUEST["pagina"]=="rest"){
+                include_once './vWSRest.php';
+            }
+            if($_REQUEST["pagina"]=="departamentos"){
+                include_once './vMtoDepartamentos.php';
+            }
+            if($_REQUEST["pagina"]=="altaDepartamento"){
+                include_once './vAltaDepartamento.php';
+            }
+            if($_REQUEST["pagina"]=="borrarDepartamento"){
+                include_once './vEliminarDepartamento.php';
+            }
+            if($_REQUEST["pagina"]=="modificar"){
+                include_once './vConsultaModificarDepartamento.php';
+            }
+            if($_REQUEST["pagina"]=="visualizar"){
+                include_once './vConsultaModificarDepartamento.php';
+            }
+            }
+        }else{
+            //Si no existe el usuario en la sesion comprueba a que pagina tiene que incluir dependidendo de que variables reciba 
+            if(isset($_REQUEST["pagina"])){
+            if($_REQUEST["pagina"]=="registro"){
+                include_once './vRegistro.php';
+            }
+            }else{
+            include_once './vlogin.php';
+            }
+        }
+    ?>
+        <footer> 
+            <a href="../doc/documentacion/html/index.html" target="_blank">Documentación</a>
+            <a href="../doc/Tema2.pdf" target="_black">Herramientas utilizadas</a>
+            <a href="../../../../../">Daniel Alcala Fernandez</a><a target="_blank" href="https://github.com/DanielAF123/Rest">GitLab</a>
+        </footer>
+    </body>
+</html>
+
+

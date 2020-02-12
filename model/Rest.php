@@ -1,5 +1,10 @@
 <?php
 Class Rest{
+    /**
+     * Recive un string con el que realizar la conulta al rest
+     * @param string $codigo
+     * @return html
+     */
     public static function consultarDatos($codigo){
     $ch= curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://data.europa.eu/euodp/data/dataset/".$codigo);
@@ -8,6 +13,11 @@ Class Rest{
     curl_close($ch);
     return $resultado;
     }
+    /**
+     * Recibe un int y devuelve un json con los ids
+     * @param int $numero
+     * @return json
+     */
     public static function consultarId($numero){
     $ch= curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://data.europa.eu/euodp/data/apiodp/action/package_list");
@@ -19,6 +29,10 @@ Class Rest{
     curl_close($ch);
     return $resultado;
     }
+    /**
+     * No funciona el rest
+     * @return NULL
+     */
     public static function idiomaTexto(){
     $ch= curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://api.apitore.com/api/22/langdetect/get");

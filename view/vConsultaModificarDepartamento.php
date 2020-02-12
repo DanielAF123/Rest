@@ -13,5 +13,11 @@
     }
         ?>
 </form>
+<?php
+    if(isset($_SESSION["errores"])){
+        echo $_SESSION["errores"]["errorDesc"];
+        unset($_SESSION["errores"]);
+    }
+?>
 <button onclick="location=' ./Layout.php?pagina=departamentos'">Atras</button>
 

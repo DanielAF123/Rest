@@ -50,17 +50,16 @@ session_start();
             }
         }else{
             //Si no existe el usuario en la sesion comprueba a que pagina tiene que incluir dependidendo de que variables reciba 
-            if(isset($_REQUEST["pagina"])){
-            if($_REQUEST["pagina"]=="registro"){
+            if(isset($_REQUEST["pagina"]) && $_REQUEST["pagina"]=="registro"){
                 include_once './vRegistro.php';
-            }
+            
             }else{
             include_once './vlogin.php';
             }
         }
     ?>
         <footer> 
-            <a href="../doc/documentacion/html/index.html" target="_blank">Documentación</a>
+            <a href="../doc/documentacion/index.html" target="_blank">Documentación</a>
             <a href="../doc/Tema2.pdf" target="_black">Herramientas utilizadas</a>
             <a href="../../../../../">Daniel Alcala Fernandez</a><a target="_blank" href="https://github.com/DanielAF123/Rest">GitLab</a>
         </footer>

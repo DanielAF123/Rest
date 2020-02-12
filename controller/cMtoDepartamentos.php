@@ -31,16 +31,36 @@ if(isset($_REQUEST["BuscarC"]) || isset($_REQUEST["buscar"]) || isset($_SESSION[
     }else{
         $_REQUEST["busqueda"]=$_SESSION["busqueda"];
     }
+    $entrada=true;
+    $aErrores=[];
+    $aErrores["busqueda"]= validacionFormularios::comprobarAlfaNumerico($_REQUEST["busqueda"], 3, 1, 0);
+    if($aErrores["busqueda"]!=null){
+        $entrada=false;
+    }
+    if($entrada){
     $resultado=DepartamentoPDO::buscaDepartamentoPorCodigo($_REQUEST["busqueda"]);
     $arrayDepartamentos= Departamento::objetoDepartamento($resultado);
     $_SESSION["Departamentos"]=$arrayDepartamentos;
+    }else{
+        $_SESSION["errores"]["errorBusqueda"]="Error en la busqueda";
+    }
     header("Location: ./view/Layout.php?pagina=departamentos");
 }
 if(isset($_REQUEST["BuscarD"])){
+    $entrada=true;
+    $aErrores=[];
+    $aErrores["busqueda"]= validacionFormularios::comprobarAlfaNumerico($_REQUEST["busqueda"], 255, 1, 0);
+    if($aErrores["busqueda"]!=null){
+        $entrada=false;
+    }
+    if($entrada){
     $_SESSION["busqueda"]=$_REQUEST["busqueda"];
     $resultado=DepartamentoPDO::buscaDepartamentoPorDescripcion($_REQUEST["busqueda"]);
     $arrayDepartamentos= Departamento::objetoDepartamento($resultado);
     $_SESSION["Departamentos"]=$arrayDepartamentos;
+    }else{
+        $_SESSION["errores"]["errorBusqueda"]="Error en la busqueda";
+    }
     header("Location: ./view/Layout.php?pagina=departamentos");
 }
 

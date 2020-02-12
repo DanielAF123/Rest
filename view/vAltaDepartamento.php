@@ -7,4 +7,12 @@
     <input type="text" name="volumen" id="volumen">
     <input type="submit" value="Crear" name="Crear">
 </form>
+<?php
+if(isset($_SESSION["errores"])){
+    foreach ($_SESSION["errores"] as $key => $value) {
+        echo $key." ".$_SESSION["errores"][$key]."<br>";
+    }
+    unset($_SESSION["errores"]);
+}
+?>
 <button onclick="location='./Layout.php?pagina=departamentos'">Atras</button>
