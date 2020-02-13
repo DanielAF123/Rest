@@ -75,4 +75,19 @@ class UsuarioPDO{
         $sql="DELETE FROM T01_Usuario WHERE T01_CodUsuario=?";
         return DBPDO::ejecutaConsulta($sql,[$codUsuario]);
     }
+    /**
+     * Recibe un codigo o parte de el y busca los posibles usuarios
+     * @param String $codUsuario
+     * @return array Usuarios
+     */
+    public function buscarUsuario($codUsuario){
+        $sql="SELECT * FROM T01_Usuario WHERE T01_CodUsuario LIKE ?";
+        $resultado=DBPDO::ejecutaConsulta($sql,["%".$codUsuario."%"]);
+        $arrayUsuarios=[];
+        while($usuario=$resultado->fetchObject()){
+            $usuarioS=new Usuario($usuario->T01_CodUsuario, $usuario->T01_DescUsuario, $usuario->T01_Password, $usuario->T01_Perfil, $usuario->T01_FechaHoraUltimaConexion, $usuario->T01_NumAccesos);
+            $arrayUsuarios[$usuario->T01_CodUsuario]=[$usuario];
+        }
+        return $arrayUsuarios;
+    }
 }

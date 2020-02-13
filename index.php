@@ -49,6 +49,9 @@ if($_REQUEST["pagina"]=='baja'){
 if($_REQUEST["pagina"]=='modificarDepartamento'){
     include_once './controller/cConsultaModificarDepartamento.php';
 }
+if($_REQUEST["pagina"]=='mantenimientoUsuarios'){
+    include_once './controller/cMtoUsuarios.php';
+}
 if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     include_once './controller/cMiCuenta.php';
 }
