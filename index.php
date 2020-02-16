@@ -18,6 +18,9 @@ include_once './model/Rest.php';
 include_once './model/ProvinciaPDO.php';
 //Comprueba que existe el usuario, la pagina y a que tiene que incluir
 if(isset($_SESSION[USUARIOA])){
+    if(isset($_SESSION["pagina"])){
+        include_once "./".$vista["mtoUsuarios"];
+    }else{
     if(isset($_REQUEST["pagina"])){
     if($_REQUEST['pagina']=="cerrar"){
         include_once './controller/cCerrarSesion.php';
@@ -60,13 +63,17 @@ if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     session_destroy();
     header("Location: ./index.php");
 }
+    }
 }else{
     //Si no existe el usuarion comprueba que pagina tiene que incluir y si existe la pagina
+    if(isset($_SESSION["pagina"])){
+        
+    }else{
     if(isset($_REQUEST["pagina"]) && $_REQUEST["pagina"]=="registro"){
         include_once './controller/cRegistro.php';
     }else{
     include_once './controller/cLogin.php';
     }
-    
+    }
 }
 

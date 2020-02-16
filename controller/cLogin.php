@@ -38,7 +38,7 @@ if(isset($_REQUEST["codUsuario"]) && isset($_REQUEST["password"])){
         }
         $_SESSION[USUARIOA]=$usuario;
         $_SESSION["datos"]=[$usuario->getCodUsuario(),$usuario->getDescUsuario(),$usuario->getUltimaConexion(),$contador,$usuario->getPerfil()];
-        header("Location: ./view/Layout.php?pagina=inicio");
+    header("Location: ./view/Layout.php?pagina=inicio");
     }else{
         header("Location: ./view/Layout.php");
 }

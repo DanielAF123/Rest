@@ -14,7 +14,9 @@
 <a href="Layout.php?pagina=departamentos&buscar=departamentos"><button>Mantenimiento departamentos</button></a><br>
 <?php if($_SESSION["datos"][4]=="administrador"){
     ?>
-    <a href="Layout.php?pagina=usuario"><button>Mantenimiento Usuarios</button></a><br>
+<form action="../index.php?pagina=inicio" method="POST">
+    <input type="submit" name="mtoUsuarios2" value="mtoUsuarios">
+</form>
         <?php
 }
 ?>

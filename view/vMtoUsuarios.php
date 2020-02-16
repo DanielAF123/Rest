@@ -1,4 +1,3 @@
-<button onclick="location='./Layout.php?pagina=inicio'">Atras</button>
 <form action="../index.php?pagina=mantenimientoUsuarios" method="POST">
     <label for="nombre">Nombre</label><br>
     <input type="text" name="nombre" id="nombre">
@@ -14,6 +13,7 @@
         <th>Botones</th>
     </tr>
     <?php
+    if(isset($_SESSION["Usuarios"])){
     foreach ($_SESSION["Usuarios"] as $key => $value) { 
  ?>
     <tr> 
@@ -28,11 +28,12 @@
                 <input type="button" value="Eliminar" onclick="location='./Layout.php?pagina=borrarDepartamento&codigo=<?php echo $value->getCodDepartamento();?>'">
         </td>
     </tr>
-            <?php }
+    <?php }}
             if(isset($_SESSION["errores"])){
             echo $_SESSION["errores"]["errorBusqueda"];
             unset($_SESSION["errores"]);
             }
+            unset($_SESSION["pagina"]);
             ?>
 </table>
-<button onclick="location='./Layout.php?pagina=inicio'">Atras</button>
+<button onclick="location='./view/Layout.php?pagina=inicio'">Atras</button>

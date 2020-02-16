@@ -6,3 +6,9 @@
  * and open the template in the editor.
  */
 define('USUARIOA', "usuarioDAW202AppLoginLogoutMulticapaPOO");
+$controladores = [
+    'mtoUsuarios' => 'controller/cMtoUsuarios.php'
+    ];
+$vista = [
+    'mtoUsuarios' => 'view/vMtoUsuarios.php'
+    ];
