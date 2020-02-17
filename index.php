@@ -25,6 +25,7 @@ if(isset($_SESSION[USUARIOA])){
     if($_REQUEST['pagina']=="cerrar"){
         include_once './controller/cCerrarSesion.php';
     }
+    echo "inicio";
 if($_REQUEST["pagina"]=='inicio'){
     include_once './controller/cInicio.php';
 }

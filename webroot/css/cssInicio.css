@@ -1,0 +1,8 @@
+#botones{
+    display: flex;
+    width: 100%;
+}
+#botones button{
+    margin: 5px;
+}
+

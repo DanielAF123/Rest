@@ -9,16 +9,16 @@ if(isset($_REQUEST["busqueda"])){
 }
 ?>
 <form action="../index.php?pagina=departamentos" method="POST">
-    <input type="text" name="busqueda" id="busqueda" autocomplete="off">
-    <input type="submit" value="Buscar por descripcion" name="BuscarD">
-    <input type="submit" value="Buscar por codigo" name="BuscarC">
+    <input class="input" type="text" name="busqueda" id="busqueda" autocomplete="off">
+    <input class="Button" type="submit" value="Buscar por descripcion" name="BuscarD">
+    <input class="Button" type="submit" value="Buscar por codigo" name="BuscarC">
 </form>
 <p id="departamentos"></p>
-<button onclick="location='Layout.php?pagina=altaDepartamento'">Alta departamento</button>
+<button class="Button" onclick="location='Layout.php?pagina=altaDepartamento'">Alta departamento</button>
 <label for="provincia">Codigo Postal</label>
-<input type="number" name="provincia" id="provincia" max="5">
-<input type="text" disabled name="provincias" id="provincias">
-<table> 
+<input class="input" type="number" name="provincia" id="provincia" max="5">
+<input class="input" type="text" disabled name="provincias" id="provincias">
+<table class="texto"> 
     <tr> 
         <th>Codigo</th>
         <th>Descripción</th>
@@ -35,11 +35,11 @@ if(isset($_REQUEST["busqueda"])){
         <td><?php echo $value->getFechaBajaDepartamento(); ?></td>
         <td><?php echo $value->getVolumenDeNegocio(); ?></td>
         <td> 
-          <input type="button" value="Rehabilitacion"  onclick="location='../index.php?pagina=rehabilitacion&codigo=<?php echo $value->getCodDepartamento();?>'">
-                <input type="button" value="Baja"  onclick="location='../index.php?pagina=baja&codigo=<?php echo $value->getCodDepartamento();?>'">
-                <input type="button" value="Visualizar"  onclick="location='./Layout.php?pagina=visualizar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>'">
-                <input type="button" value="Modificar"  onclick="location='./Layout.php?pagina=modificar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>&modificarDepartamento=modifica'">
-                <input type="button" value="Eliminar" onclick="location='./Layout.php?pagina=borrarDepartamento&codigo=<?php echo $value->getCodDepartamento();?>'">
+          <input class="Button" type="button" value="Rehabilitacion"  onclick="location='../index.php?pagina=rehabilitacion&codigo=<?php echo $value->getCodDepartamento();?>'">
+          <input class="Button" type="button" value="Baja"  onclick="location='../index.php?pagina=baja&codigo=<?php echo $value->getCodDepartamento();?>'">
+                <input class="Button" type="button" value="Visualizar"  onclick="location='./Layout.php?pagina=visualizar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>'">
+                <input class="Button" type="button" value="Modificar"  onclick="location='./Layout.php?pagina=modificar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>&modificarDepartamento=modifica'">
+                <input class="Button" type="button" value="Eliminar" onclick="location='./Layout.php?pagina=borrarDepartamento&codigo=<?php echo $value->getCodDepartamento();?>'">
         </td>
     </tr>
             <?php }
@@ -49,4 +49,4 @@ if(isset($_REQUEST["busqueda"])){
             }
             ?>
 </table>
-<button onclick="location='./Layout.php?pagina=inicio'">Atras</button>
+<button class="Button" onclick="location='./Layout.php?pagina=inicio'">Atras</button>

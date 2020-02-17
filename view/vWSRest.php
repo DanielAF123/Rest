@@ -1,7 +1,9 @@
-<h1>Web Services REST</h1>
-<h2>Utilización de WS REST Ajenos</h2>
-<a href="https://data.europa.eu/euodp/es/developerscorner" target="_blank">Link de la api utlizada</a>
-<p>Información el servicio:</p>
+<div id="or">
+    <h1 class="tTexto">Web Services REST</h1>
+<h2 class="tTexto">Utilización de WS REST Ajenos</h2>
+<div id="or2">
+<a class="texto" href="https://data.europa.eu/euodp/es/developerscorner" target="_blank">Link de la api utlizada</a>
+<p class="texto" >Información el servicio:</p>
 <!--<form action="../index.php?pagina=rest" method="POST">
     <label for="numero">Numero de ids</label>
     <input type="number" name="numero" id="numero">
@@ -14,25 +16,27 @@
     }*/
     ?></p>
 </form>-->
-    <p>ejemplos</p>
-    <p>cordisH2020projects,dgt-translation-memory</p>
+    
+    <p class="texto">ejemplos</p>
+    </div>
+    <p class="texto">cordisH2020projects,dgt-translation-memory</p>
 <form action="../index.php?pagina=rest" method="POST"> 
     <label for="codigo">Codigo para la busqueda</label>
-    <input type="text" name="codigo" id="codigo">
-    <input type="submit" value="Buscar" name="buscar">
+    <input class="input" type="text" name="codigo" id="codigo">
+    <input class="Button" type="submit" value="Buscar" name="buscar">
     <?php 
         if(isset($_SESSION["resultadoAPI"]["html"])){
     echo $_SESSION["resultadoAPI"]["html"];
         }
     ?>
 </form>
-    <a href="../index.php?pagina=inicio"><button>Atras</button></a>
-    <p>Direccion API PROPIA http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/controller/WSRestDepartamento.php</p>
-    <h3>WS REST Propio</h3>
+    <button class="Button" onclick="location='./Layout.php?pagina=inicio'">Atras</button>
+    <p class="texto">Direccion API PROPIA http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/controller/WSRestDepartamento.php</p>
+    <h3 class="tTexto">WS REST Propio</h3>
     <form action="../index.php?pagina=rest" method="POST">
         <label for="codigo">codigo del departamento GET</label>
-        <input type="text" name="codigo" id="codigo">
-        <input type="submit" value="Buscar" name="bCodigo">
+        <input class="input" type="text" name="codigo" id="codigo">
+        <input class="Button" type="submit" value="Buscar" name="bCodigo">
         <?php 
         if(isset($_SESSION["resultadoAPI"]["propio"])){
             echo $_SESSION["resultadoAPI"]["propio"];
@@ -41,13 +45,13 @@
     </form>
     <form action="../index.php?pagina=rest" method="POST">
         <label for="codigo">codigo del departamento POST</label>
-        <input type="text" name="codigo" id="codigo">
-        <input type="submit" value="Buscar" name="bCodigoP">
+        <input class="input" type="text" name="codigo" id="codigo">
+        <input class="Button" type="submit" value="Buscar" name="bCodigoP">
         <?php 
         if(isset($_SESSION["resultadoAPI"]["propioP"])){
             echo $_SESSION["resultadoAPI"]["propioP"];
         }
         ?>
     </form>
-
+</div>
 

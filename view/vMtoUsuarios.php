@@ -36,4 +36,4 @@
             unset($_SESSION["pagina"]);
             ?>
 </table>
-<button onclick="location='./view/Layout.php?pagina=inicio'">Atras</button>
+<button onclick="location='view/Layout.php?pagina=inicio'">Atras</button>

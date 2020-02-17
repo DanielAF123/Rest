@@ -8,6 +8,7 @@ session_start();
         <meta charset="UTF-8">
         <title>Document</title>
         <link rel="stylesheet" type="text/css" href="../webroot/css/css.css">
+        <link href="../webroot/css/cssInicio.css" rel="stylesheet" type="text/css"/>
         <script src="../webroot/js/jquery-3.4.1.min.js"></script>
         <script src="../webroot/js/programa.js"></script>
     </head>
