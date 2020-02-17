@@ -141,3 +141,6 @@ label{
 .tTexto{
     font-size: 2em;
 }
+.clear{
+    clear: both;
+}
