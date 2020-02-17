@@ -8,6 +8,7 @@
     if(!isset($_SESSION[USUARIOA])){
     header('Location: view/Layout.php?pagina=inicio');
     }
+    //Redirecciona al mantenimiento usuarios
 if(isset($_REQUEST["mtoUsuarios2"])){
     $_SESSION["pagina"]="mtoUsuarios";
     header("Location: index.php");

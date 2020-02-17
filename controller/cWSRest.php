@@ -17,6 +17,7 @@ if($entrada){
     header("Location: view/Layout.php?pagina=rest");
     
 }*/
+//Realiza la validacion de campos y realizamos la peticion al rest por el metodo get
 if(isset($_REQUEST["buscar"])){
  $entrada=true;
  $aErrores=[];
@@ -30,6 +31,7 @@ if($entrada){
     header("Location: view/Layout.php?pagina=rest");
     
 }
+//Valida los campos de busqueda y realiza la busqueda por codigo con el metodo get en la api propia
 if(isset($_REQUEST["bCodigo"])){
  $entrada=true;
  $aErrores=[];
@@ -48,6 +50,7 @@ if($entrada){
     header("Location: view/Layout.php?pagina=rest");
     
 }
+//Valida los campos de busqueda y realiza la busqueda por codigo con el metodo post en la api propia
 if(isset($_REQUEST["bCodigoP"])){
  $entrada=true;
  $aErrores=[];
