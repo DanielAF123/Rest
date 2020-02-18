@@ -5,7 +5,7 @@ if(!isset($_SESSION[USUARIOA])){
 if(isset($_SESSION["resultadoAPI"])){
     unset($_SESSION["resultadoAPI"]);
 }
-/*if(isset($_REQUEST["ids"])){
+if(isset($_REQUEST["ids"])){
  $entrada=true;
  $aErrores=[];
 }else{
@@ -16,7 +16,7 @@ if($entrada){
     $_SESSION["resultadoAPI"]=json_decode($resultado,true);
     header("Location: view/Layout.php?pagina=rest");
     
-}*/
+}
 //Realiza la validacion de campos y realizamos la peticion al rest por el metodo get
 if(isset($_REQUEST["buscar"])){
  $entrada=true;

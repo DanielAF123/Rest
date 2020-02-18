@@ -4,18 +4,18 @@
 <div id="or2">
 <a class="texto" href="https://data.europa.eu/euodp/es/developerscorner" target="_blank">Link de la api utlizada</a>
 <p class="texto" >Información el servicio:</p>
-<!--<form action="../index.php?pagina=rest" method="POST">
+<form action="../index.php?pagina=rest" method="POST">
     <label for="numero">Numero de ids</label>
-    <input type="number" name="numero" id="numero">
-    <input type="submit" value="IDS" name="ids"><br>
+    <input class="input" type="number" name="numero" id="numero">
+    <input class="Button" type="submit" value="IDS" name="ids"><br>
     <label>Respuesta</label>
-    <p><?php/* if(isset($_SESSION["resultadoAPI"]["result"])){
+    <p class="texto"><?php if(isset($_SESSION["resultadoAPI"]["result"])){
     foreach ($_SESSION["resultadoAPI"]["result"] as $key => $value) {
         echo $value.","."\n"."<br>";
     }
-    }*/
+    }
     ?></p>
-</form>-->
+</form>
     
     <p class="texto">ejemplos</p>
     </div>
