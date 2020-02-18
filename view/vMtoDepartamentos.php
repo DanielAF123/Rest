@@ -9,7 +9,7 @@ if(isset($_REQUEST["busqueda"])){
 }
 ?>
 <form action="../index.php?pagina=departamentos" method="POST">
-    <input class="input" type="text" name="busqueda" id="busqueda" autocomplete="off">
+    <input class="input" type="text" name="busqueda" id="busqueda" autocomplete="off" value="<?php if(isset($_SESSION["busqueda"])){echo $_SESSION["busqueda"];}?>">
     <input class="Button" type="submit" value="Buscar por descripcion" name="BuscarD">
     <input class="Button" type="submit" value="Buscar por codigo" name="BuscarC">
 </form>

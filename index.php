@@ -55,6 +55,9 @@ if($_REQUEST["pagina"]=='modificarDepartamento'){
 if($_REQUEST["pagina"]=='mantenimientoUsuarios'){
     include_once './controller/cMtoUsuarios.php';
 }
+if($_REQUEST["pagina"]=='ajax'){
+    include_once './controller/cAjax.php';
+}
 if($_REQUEST["pagina"]=="editar" || $_REQUEST["pagina"]=="contra"){
     include_once './controller/cMiCuenta.php';
 }

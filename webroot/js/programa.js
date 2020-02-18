@@ -16,7 +16,7 @@ function cambio(){
     miXHR.open("POST",url,true);
     miXHR.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     miXHR.onreadystatechange=cambioDepartamento;
-    miXHR.send("busqueda="+valor+"&ajax=ajax&pagina=departamentos");
+    miXHR.send("busqueda="+valor+"&ajax=ajax&pagina=ajax");
 }else{
         alert("Error al cargar AJAX");
 }
@@ -54,7 +54,7 @@ function provincia(){
             valor=numeros[0]+numeros[1];
         }
         }
-    miXHR.send("busqueda="+valor+"&ajaxP=ajax&pagina=departamentos");
+    miXHR.send("busqueda="+valor+"&ajaxP=ajax&pagina=ajax");
 }else{
         alert("Error al cargar AJAX");
 }

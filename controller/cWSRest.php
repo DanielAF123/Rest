@@ -41,7 +41,8 @@ if(isset($_REQUEST["bCodigo"])){
 }
 if($entrada){
     $ch= curl_init();
-    curl_setopt($ch,CURLOPT_URL,"http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/controller/WSRestDepartamento.php?codigo=".$_REQUEST["codigo"]);
+    curl_setopt($ch,CURLOPT_URL,"http://192.168.1.200/proyectoDWES/proyectoTema6/aplicacionRest/api/WSRestDepartamento.php?codigo=".$_REQUEST["codigo"]);
+    //curl_setopt($ch,CURLOPT_URL,"http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/api/WSRestDepartamento.php?codigo=".$_REQUEST["codigo"]);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    
     $resultado=curl_exec($ch);
     curl_close($ch);
@@ -60,11 +61,12 @@ if(isset($_REQUEST["bCodigoP"])){
 }
 if($entrada){
     $ch= curl_init();
-    curl_setopt($ch,CURLOPT_URL,"http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/controller/WSRestDepartamento.php");
+    curl_setopt($ch,CURLOPT_URL,"http://192.168.1.200/proyectoDWES/proyectoTema6/aplicacionRest/api/WSRestDepartamento.php");
+    //curl_setopt($ch,CURLOPT_URL,"http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/api/WSRestDepartamento.php");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, TRUE);
     $array=["codigo"=>$_REQUEST["codigo"]];
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $array);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "parametros=".json_encode($array));
     $resultado=curl_exec($ch);
     curl_close($ch);
     json_decode($resultado,true);

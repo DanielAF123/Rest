@@ -1,6 +1,7 @@
 <div id="or">
     <h1 class="tTexto">Web Services REST</h1>
 <h2 class="tTexto">Utilización de WS REST Ajenos</h2>
+<a href="../doc/UsoDelApiRest.pdf" target="_black">Uso del api rest</a>
 <div id="or2">
 <a class="texto" href="https://data.europa.eu/euodp/es/developerscorner" target="_blank">Link de la api utlizada</a>
 <p class="texto" >Información el servicio:</p>
@@ -31,7 +32,7 @@
     ?>
 </form>
     <button class="Button" onclick="location='./Layout.php?pagina=inicio'">Atras</button>
-    <p class="texto">Direccion API PROPIA http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/controller/WSRestDepartamento.php</p>
+    <p class="texto">Direccion API PROPIA http://daw202.sauces.local/proyectoDWES/proyectoTema6/aplicacionRest/api/WSRestDepartamento.php</p>
     <h3 class="tTexto">WS REST Propio</h3>
     <form action="../index.php?pagina=rest" method="POST">
         <label for="codigo">codigo del departamento GET</label>

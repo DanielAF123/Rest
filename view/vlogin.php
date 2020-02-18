@@ -6,6 +6,7 @@
     <li><a href="../doc/casosDeUso.pdf" target="_blank">Casos de Uso</a></li>
     <li><a href="../doc/Clases.PNG" target="_blank">Diagrama de clases</a></li>
     <li><a href="../doc/relacion de ficheros.png" target="_blank">Relacion de ficheros</a></li>
+    <li><a href="../doc/UsoDelApiRest.pdf" target="_blank">Uso del api rest</a></li>
 </ul>
 <div class="formulario">
 <form name="formularioa" action="../index.php" method="POST" enctype="multipart/form-data">
