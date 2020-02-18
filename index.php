@@ -19,7 +19,7 @@ include_once './model/ProvinciaPDO.php';
 //Comprueba que existe el usuario, la pagina y a que tiene que incluir
 if(isset($_SESSION[USUARIOA])){
     if(isset($_SESSION["pagina"])){
-        include_once "./".$vista["mtoUsuarios"];
+        include_once "./".$controladores["mtoUsuarios"];
     }else{
     if(isset($_REQUEST["pagina"])){
     if($_REQUEST['pagina']=="cerrar"){

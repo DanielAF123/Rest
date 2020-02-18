@@ -11,5 +11,6 @@
     //Redirecciona al mantenimiento usuarios
 if(isset($_REQUEST["mtoUsuarios2"])){
     $_SESSION["pagina"]="mtoUsuarios";
+    $_REQUEST["pagina"]="mtoUsuarios";
     header("Location: index.php");
 }    

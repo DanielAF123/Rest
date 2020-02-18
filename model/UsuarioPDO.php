@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include 'DBPDO.php';
+include_once 'DBPDO.php';
 class UsuarioPDO{
     /**
      * Valida si un usuario existe en la base de datos
@@ -78,16 +78,11 @@ class UsuarioPDO{
     /**
      * Recibe un codigo o parte de el y busca los posibles usuarios
      * @param String $codUsuario
-     * @return array Usuarios
+     * @return PDOStatement Resultado
      */
     public function buscarUsuario($codUsuario){
         $sql="SELECT * FROM T01_Usuario WHERE T01_CodUsuario LIKE ?";
         $resultado=DBPDO::ejecutaConsulta($sql,["%".$codUsuario."%"]);
-        $arrayUsuarios=[];
-        while($usuario=$resultado->fetchObject()){
-            $usuarioS=new Usuario($usuario->T01_CodUsuario, $usuario->T01_DescUsuario, $usuario->T01_Password, $usuario->T01_Perfil, $usuario->T01_FechaHoraUltimaConexion, $usuario->T01_NumAccesos);
-            $arrayUsuarios[$usuario->T01_CodUsuario]=[$usuario];
-        }
-        return $arrayUsuarios;
+        return $resultado;
     }
 }

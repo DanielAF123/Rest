@@ -1,9 +1,15 @@
-<form action="../index.php?pagina=mantenimientoUsuarios" method="POST">
-    <label for="nombre">Nombre</label><br>
-    <input type="text" name="nombre" id="nombre">
-    <input type="submit" value="Buscar Nombre" name="buscar" id="buscar">
+<html>
+    <head>
+      <link href="webroot/css/css.css" rel="stylesheet" type="text/css"/>
+    <link href="webroot/css/cssEditar.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+       <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+    <label for="nombre">Codigo Usuario</label><br>
+    <input class="input" type="text" name="nombre" id="nombre">
+    <input class="Button" type="submit" value="Buscar Nombre" name="buscar" id="buscar">
 </form>
-<table> 
+<table class="texto"> 
     <tr> 
         <th>Codigo Usuario</th>
         <th>Descripción</th>
@@ -23,9 +29,9 @@
         <td><?php echo $value->getUltimaConexion(); ?></td>
         <td><?php echo $value->getContadorAccesos(); ?></td>
         <td> 
-                <input type="button" value="Visualizar"  onclick="location='./Layout.php?pagina=visualizar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>'">
-                <input type="button" value="Modificar"  onclick="location='./Layout.php?pagina=modificar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>&modificarDepartamento=modifica'">
-                <input type="button" value="Eliminar" onclick="location='./Layout.php?pagina=borrarDepartamento&codigo=<?php echo $value->getCodDepartamento();?>'">
+            <input class="Button" type="button" value="Visualizar">
+            <input class="Button" type="button" value="Modificar">
+            <input class="Button" type="button" value="Eliminar">
         </td>
     </tr>
     <?php }}
@@ -33,7 +39,17 @@
             echo $_SESSION["errores"]["errorBusqueda"];
             unset($_SESSION["errores"]);
             }
-            unset($_SESSION["pagina"]);
             ?>
 </table>
-<button onclick="location='view/Layout.php?pagina=inicio'">Atras</button>
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>">
+    <input class="Button" type="submit" value="Atras" name="atras">
+</form>
+<?php 
+/*botones
+ * <input type="button" value="Visualizar"  onclick="location='./Layout.php?pagina=visualizar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>'">
+                <input type="button" value="Modificar"  onclick="location='./Layout.php?pagina=modificar&codigo=<?php echo $value->getCodDepartamento();?>&desc=<?php echo $value->getDescDepartamento();?>&volumen=<?php echo $value->getVolumenDeNegocio();?>&baja=<?php echo $value->getFechaBajaDepartamento();?>&modificarDepartamento=modifica'">
+                <input type="button" value="Eliminar" onclick="location='./Layout.php?pagina=borrarDepartamento&codigo=<?php echo $value->getCodDepartamento();?>'">
+ */
+?>
+    </body>
+</html>
